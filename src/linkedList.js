@@ -1,3 +1,5 @@
-const hello = 'hello';
-
-console.log(hello);
+class LinkedList {
+  constructor(head = null) {
+    this.head = head;
+  }
+}
