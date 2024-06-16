@@ -27,13 +27,34 @@ class LinkedList {
   }
 
   // Returns the total number of nodes in the list
-  size() {}
+  size() {
+    let listSize = 0;
+    let current = this.head;
+
+    while (current !== null) {
+      listSize++;
+      current = current.nextNode;
+    }
+    console.log(listSize);
+  }
 
   // Returns the first node in the list.
-  head() {}
+  getHead() {
+    return this.head;
+  }
 
   // Returns the last node in the list.
-  tail() {}
+  getTail() {
+    if (this.head === null) {
+      return this.head;
+    }
+
+    let current = this.head;
+    while (current.nextNode !== null) {
+      current = current.nextNode;
+    }
+    return current;
+  }
 
   // Returns the node at the given index
   at(index) {}
