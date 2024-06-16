@@ -57,7 +57,21 @@ class LinkedList {
   }
 
   // Returns the node at the given index
-  at(index) {}
+  at(index) {
+    if (index < 0 || this.head === null) {
+      return this.head;
+    } else {
+      let counter = 0;
+      let current = this.head;
+
+      while (current !== null && counter < index) {
+        current = current.nextNode;
+        counter++;
+      }
+
+      return current;
+    }
+  }
 
   // Removes the last element from the list
   pop() {}
