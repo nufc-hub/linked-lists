@@ -74,7 +74,25 @@ class LinkedList {
   }
 
   // Removes the last element from the list
-  pop() {}
+  pop() {
+    if (this.head === null) {
+      throw new Error('Can not delete, there is no list to delete.');
+    }
+
+    if (this.head.nextNode === null) {
+      this.head = null;
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+
+    while (current.nextNode !== null) {
+      previous = current;
+      current = current.nextNode;
+    }
+    previous.nextNode = null;
+  }
 
   // Returns true if the passed in value is in the list and otherwise returns false.
   contains(value) {}
