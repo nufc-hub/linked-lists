@@ -1,15 +1,30 @@
 import Node from './node.js';
 
 class LinkedList {
-  constructor(head = null) {
-    this.head = head;
+  constructor() {
+    this.head = null;
   }
 
   // Adds a new node containing -value- to the end of the list.
-  append(value) {}
+  append(value) {
+    const newNode = new Node(value);
+
+    if (this.head === null) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.nextNode !== null) {
+        current = current.nextNode; //Or node. next?
+      }
+
+      current.nextNode = newNode;
+    }
+  }
 
   // Adds a new node containing -value- to the start of the list.
-  prepend(value) {}
+  prepend(value) {
+    this.head = new Node(value, this.head);
+  }
 
   // Returns the total number of nodes in the list
   size() {}
