@@ -59,7 +59,7 @@ class LinkedList {
   // Returns the node at the given index
   at(index) {
     if (index < 0 || this.head === null) {
-      return this.head;
+      return null;
     } else {
       let counter = 0;
       let current = this.head;
