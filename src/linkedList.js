@@ -35,7 +35,7 @@ class LinkedList {
       listSize++;
       current = current.nextNode;
     }
-    console.log(listSize);
+    return listSize;
   }
 
   // Returns the first node in the list.
