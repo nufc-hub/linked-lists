@@ -76,7 +76,7 @@ class LinkedList {
   // Removes the last element from the list
   pop() {
     if (this.head === null) {
-      throw new Error('Can not delete, there is no list to delete.');
+      return null;
     }
 
     if (this.head.nextNode === null) {
