@@ -113,10 +113,42 @@ class LinkedList {
   }
 
   // Returns the index of the node containing value, or null if not found.
-  find(value) {}
+  find(value) {
+    if (this.head === null) {
+      return null;
+    }
+
+    let current = this.head;
+    let index = 0;
+
+    while (current !== null) {
+      if (current.value === value) {
+        return index;
+      }
+      index++;
+      current = current.nextNode;
+    }
+    return null;
+  }
 
   // Represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
-  toString() {}
+  toString() {
+    if (this.head === null) {
+      return 'null';
+    }
+
+    let current = this.head;
+    let string = '';
+
+    while (current !== null) {
+      // console.log(`${current.value} -> `); // Add the node value to a sting seperated by '->'
+      string += `${current.value} -> `;
+      current = current.nextNode;
+    }
+
+    string += 'null';
+    return string;
+  }
 }
 
 export default LinkedList;
