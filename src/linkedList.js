@@ -39,12 +39,12 @@ class LinkedList {
   }
 
   // Returns the first node in the list.
-  getHead() {
+  head() {
     return this.head;
   }
 
   // Returns the last node in the list.
-  getTail() {
+  tail() {
     if (this.head === null) {
       return this.head;
     }
