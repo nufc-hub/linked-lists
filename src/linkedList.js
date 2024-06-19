@@ -149,6 +149,8 @@ class LinkedList {
     string += 'null';
     return string;
   }
+
+  insertAt(value, index) {}
 }
 
 export default LinkedList;
