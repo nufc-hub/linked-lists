@@ -14,7 +14,7 @@ class LinkedList {
     } else {
       let current = this.head;
       while (current.nextNode !== null) {
-        current = current.nextNode; //Or node. next?
+        current = current.nextNode;
       }
 
       current.nextNode = newNode;
@@ -149,8 +149,50 @@ class LinkedList {
     string += 'null';
     return string;
   }
+  // insertAt(value, index) that inserts a new node with the provided value at the given index.
+  insertAt(value, index) {
+    const newNode = new Node(value);
 
-  insertAt(value, index) {}
+    if (index < 0) {
+      return;
+    }
+
+    if (this.head === null) {
+      if (index === 0) {
+        this.head = newNode;
+      } else {
+        console.log(`Index ${index} is out of bounds for an empty list.`);
+      }
+      return;
+    }
+
+    if (index === 0) {
+      newNode.nextNode = this.head;
+      this.head = newNode;
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+    let counter = 0;
+
+    while (current !== null && counter < index) {
+      previous = current;
+      current = current.nextNode;
+      counter++;
+    }
+
+    if (counter === index) {
+      newNode.nextNode = current;
+      if (previous !== null) {
+        previous.nextNode = newNode;
+      }
+    } else {
+      console.log(`Index ${index} is out of bounds.`);
+    }
+  }
+
+  removeAt(index) {}
 }
 
 export default LinkedList;
