@@ -192,7 +192,38 @@ class LinkedList {
     }
   }
 
-  removeAt(index) {}
+  // removeAt(index) that removes the node at the given index.
+  removeAt(index) {
+    if (index < 0) {
+      return;
+    }
+
+    if (this.head === null) {
+      console.log(`Index ${index} is out of bounds for an empty list.`);
+      return;
+    }
+
+    if (index === 0) {
+      this.head = this.head.nextNode;
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+    let counter = 0;
+
+    while (current !== null && counter < index) {
+      previous = current;
+      current = current.nextNode;
+      counter++;
+    }
+
+    if (current === null) {
+      console.log(`Index ${index} is out of bounds.`);
+    } else if (counter === index) {
+      previous.nextNode = current.nextNode;
+    }
+  }
 }
 
 export default LinkedList;
