@@ -39,12 +39,12 @@ class LinkedList {
   }
 
   // Returns the first node in the list.
-  head() {
+  getHead() {
     return this.head;
   }
 
   // Returns the last node in the list.
-  tail() {
+  getTail() {
     if (this.head === null) {
       return this.head;
     }
@@ -141,7 +141,6 @@ class LinkedList {
     let string = '';
 
     while (current !== null) {
-      // console.log(`${current.value} -> `); // Add the node value to a sting seperated by '->'
       string += `${current.value} -> `;
       current = current.nextNode;
     }
